@@ -1,0 +1,81 @@
+.bg-c-blue {
+    background: linear-gradient(45deg, green,pink);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg,pink,gray);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg,green,green);
+}
+
+.bg-c-pink {
+    background: linear-gradient(45deg,pink,gray);
+}
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px green;
+    box-shadow: 0 1px 2.94px 0.06px green;
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.bg-main {
+    background-color :rgb(31,140,12); 
+}
+
+.navbar{
+    background-color: green ;
+}
+
+.chart-background {
+    background-color: pink;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+.order-card i {
+    font-size: 26px;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+.btn-gradient {
+    background: linear-gradient(to right,pink,pink);
+    color: white; /* Mengubah warna teks menjadi putih agar terlihat dengan baik */
+    border: none; /* Menghapus garis tepi jika ada */
+    /* padding: 10px 20px;  */
+ 
+}
+
+.bg.main {
+    background-color : rgb(156, 30, 78);
+}
+
+.btn-hapus{
+    background-color: green;
+}
+
+
+/* Mengatur efek gradient pada teks */
+.text {
+    background-image: black; /* Ganti kode warna sesuai dengan gradient yang kamu inginkan */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+}
+
+
+
