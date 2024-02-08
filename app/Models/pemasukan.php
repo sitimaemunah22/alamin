@@ -10,8 +10,8 @@ class pemasukan extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'pemasukan';
-    protected $primaryKey = 'id';
-    protected $fillable = ['kode_pemasukan', 'id_jenis_pemasukan', 'id_donatur', 'jumlah_pemsukan', 'tanggal_pemasukan', 'upload'];
+    protected $primaryKey = 'kode_pemasukan';
+    protected $fillable = ['id_jenis_pemasukan', 'id_donatur', 'jumlah_pemsukan', 'tanggal_pemasukan', 'upload'];
 
     public function jenis_pemasukan()
     {

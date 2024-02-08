@@ -274,65 +274,27 @@
 <div class="container">
     <div class="row justify-content-center"> <!-- Menggunakan justify-content-center untuk memusatkan div -->
         <div class="col-10">
-            <div class="card" style="margin-left: 200px; height: 600px; width:800px;">
+            <div class="card" style="margin-left: 200px; height: 550px; width:800px;">
                 <div class="card-body">
 
-                    <form action="{{ route('simpan.pemasukan') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('simpan.jenispemasukan') }}" method="post">
+                        {{ csrf_field() }}
                         <div class="mb-3">
-                            <div class="form-group my-2">
-                                <h3 class="text-center mb-4">Edit Pemasukan</h3>
-                                <input type="text" id="id" name="id" class="form-control"
-                                    placeholder="id" value="{{ $pemasukan->id }}" hidden>
+                            <div class="form-group">
+                                <h3 class="text-center mb-4">Edit Pengeluaran</h3>
+
+                                <label for="">Jenis Pengeluaran</label>
+                                <input type="text" id="nama_pengeluaran" name="nama_pengeluaran" class="form-control"
+                                    placeholder="nama_pengeluaran" value="{{ $jenis_pengeluaran->nama_pengeluaran }}">
+
+                                <input type="text" id="id_jenis_pengeluaran" name="id_jenis_pengeluaran" class="form-control"
+                                    value="{{ $jenis_pengeluaran->id_jenis_pengeluaran }}" hidden>
                             </div>
 
-                            <div class="form-group my-2">
-                                {{ csrf_field() }}
-                                <!-- <label for="">Kode Pemasukan</label> -->
-                                <input type="number" id="kode" name="kode_pemasukan" class="form-control"
-                                    placeholder="kode_pemasukan" value="{{ $pemasukan->kode_pemasukan }}" hidden>
-                            </div>
-                            <div class="form-group my-2">
-                                <label for="">Jenis Pemasukan</label>
-                                <select name="id_jenis_pemasukan" class="form-control">
-                                    @foreach ($jenis_pemasukan as $data)
-                                        <option value="{{ $data->id }}"
-                                            {{ $pemasukan->id_jenis_pemasukan === $data->id_jenis_pemasukan ? 'selected' : '' }}>
-                                            {{ $data->nama_pemasukan }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group my-2">
-                                <label for="">Pilih Donatur</label>
-                                <select name="id_donatur" class="form-control">
-                                    @foreach ($donatur as $item)
-                                        <option value="{{ $item->id }}"
-                                            {{ $pemasukan->id_donatur === $item->id_donatur ? 'selected' : '' }}>
-                                            {{ $item->nama }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group my-2">
-                                <label for="">Jumlah Pemasukan</label>
-                                <input type="number" id="jumlah" name="jumlah_pemsukan" class="form-control"
-                                    placeholder="jumlah_pemsukan" value="{{ $pemasukan->jumlah_pemsukan }}">
-                            </div>
-                            <div class="form-group my-2">
-                                <label for="">Jumlah Pemasukan</label>
-                                <input type="date" id="tanggal" name="tanggal_pemasukan" class="form-control"
-                                    placeholder="tanggal_pemasukan" value="{{ $pemasukan->tanggal_pemasukan }}">
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="mb-2">Upload</label>
-                                <br>
-                                <input type="file" name="upload" id="upload" class="form-control">
-                            </div>
                             <div class="form-group text-left"><br></br>
                                 <!-- Menggunakan text-center untuk memusatkan tombol -->
                                 <button type="submit" class="btn btn-success">Simpan Data</button>
                             </div>
-                           
                     </form>
                 </div>
             </div>

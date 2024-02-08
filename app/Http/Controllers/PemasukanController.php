@@ -42,8 +42,7 @@ class PemasukanController extends Controller
         
         $id = $request->id;
 
-        $data = $request->validate([
-            'kode_pemasukan' => 'required', 
+        $data = $request->validate([ 
             'id_jenis_pemasukan' => 'required',
             'id_donatur' => 'required', 
             'jumlah_pemsukan' => 'required', 
@@ -106,7 +105,7 @@ class PemasukanController extends Controller
         ];
 
         // dd($data);
-        return view('dashboard.pemasukan.edit', $data);
+        return view('dashboard.Pemasukan.edit', $data);
     }
 
     public function detail()

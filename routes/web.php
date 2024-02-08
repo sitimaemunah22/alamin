@@ -61,6 +61,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/jenispemasukan/tambah', [JenisPemasukanController::class, 'tambah'])->name('jenispemasukan.tambah');
     Route::post('/jenispemasukan/simpan', [JenisPemasukanController::class, 'simpan'])->name('simpan.jenispemasukan');
     Route::get('/jenispemasukan/edit/{id}', [JenisPemasukanController::class, 'edit'])->name('jenispemasukan.edit');
+    Route::get('/jenispemasukan/detail/{id}', [JenisPemasukanController::class, 'detail'])->name('jenispemasukan.detail');
 
     Route::get('/jenispengeluaran', [JenisPengeluaranController ::class, 'index'])->name('jenispengeluaran.index');
     Route::get('/jenispengeluaran/tambah', [JenisPengeluaranController::class, 'tambah'])->name('jenispengeluaran.tambah');
@@ -71,6 +72,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/donatur/tambah', [DonaturController::class, 'tambah'])->name('donatur.tambah');
     Route::post('/donatur/simpan', [DonaturController::class, 'simpan'])->name('simpan.donatur');
     Route::get('/donatur/edit/{id}', [DonaturController::class, 'edit'])->name('edit.donatur');
+    Route::get('/donatur/detail/{id}', [DonaturController::class, 'detail'])->name('detail.donatur');
 
 
     Route::controller(PengeluaranController::class)->group(function () {

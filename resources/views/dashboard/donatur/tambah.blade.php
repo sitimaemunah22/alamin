@@ -305,7 +305,7 @@
                             <div class="form-group my-2">
                                 <label for="">No Telephone</label>
                                 <br>
-                                <input type="number" name="no_telephone" id="no_telephone"
+                                <input type="string" name="no_telephone" id="no_telephone"
                                     placeholder="Nomer Telepon">
                             </div>
                             <div class="form-group my-2">

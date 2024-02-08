@@ -1,5 +1,5 @@
 {{-- @extends('layouts.app')
-@section('title', 'Pemasukan')
+@section('title', 'JenisPemasukan')
 @section('content') --}}
 
 <!doctype html>
@@ -274,68 +274,48 @@
 <div class="container">
     <div class="row justify-content-center"> <!-- Menggunakan justify-content-center untuk memusatkan div -->
         <div class="col-10">
-            <div class="card" style="margin-left: 200px; height: 600px; width:800px;">
+            <div class="card">
                 <div class="card-body">
 
-                    <form action="{{ route('simpan.pemasukan') }}" method="post" enctype="multipart/form-data">
-                        <div class="mb-3">
-                            <div class="form-group my-2">
-                                <h3 class="text-center mb-4">Edit Pemasukan</h3>
-                                <input type="text" id="id" name="id" class="form-control"
-                                    placeholder="id" value="{{ $pemasukan->id }}" hidden>
-                            </div>
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <h3 class="text-center mb-4">Detail Data</h3>
+                        </div>
+
+                        <form action="{{ route('simpan.donatur') }}" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+
+                            <input type="string" id="id" name="id" class="form-control"
+                                value="{{ $donatur->id }}" hidden>
 
                             <div class="form-group my-2">
-                                {{ csrf_field() }}
-                                <!-- <label for="">Kode Pemasukan</label> -->
-                                <input type="number" id="kode" name="kode_pemasukan" class="form-control"
-                                    placeholder="kode_pemasukan" value="{{ $pemasukan->kode_pemasukan }}" hidden>
+                                <label for="">Nama Donatur</label>
+                                <input type="string" id="nama" name="nama" class="form-control"
+                                    placeholder="Nama Donatur" value="{{ $donatur->nama }}">
                             </div>
                             <div class="form-group my-2">
-                                <label for="">Jenis Pemasukan</label>
-                                <select name="id_jenis_pemasukan" class="form-control">
-                                    @foreach ($jenis_pemasukan as $data)
-                                        <option value="{{ $data->id }}"
-                                            {{ $pemasukan->id_jenis_pemasukan === $data->id_jenis_pemasukan ? 'selected' : '' }}>
-                                            {{ $data->nama_pemasukan }}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <label for="">Alamat</label>
+                                <br>
+                                <textarea name="alamat" id="alamat" cols="10" rows="10" style="height: 100px; width: 400px"
+                                    class="mt-2" placeholder=" Alamat">{{ $donatur->alamat }}</textarea>
                             </div>
                             <div class="form-group my-2">
-                                <label for="">Pilih Donatur</label>
-                                <select name="id_donatur" class="form-control">
-                                    @foreach ($donatur as $item)
-                                        <option value="{{ $item->id }}"
-                                            {{ $pemasukan->id_donatur === $item->id_donatur ? 'selected' : '' }}>
-                                            {{ $item->nama }}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <label for="">No Telephone</label>
+                                <br>
+                                <input type="string" name="no_telephone" id="no_telephone"
+                                    placeholder="Nomer Telepon" value="{{ $donatur->no_telephone }}">
                             </div>
                             <div class="form-group my-2">
-                                <label for="">Jumlah Pemasukan</label>
-                                <input type="number" id="jumlah" name="jumlah_pemsukan" class="form-control"
-                                    placeholder="jumlah_pemsukan" value="{{ $pemasukan->jumlah_pemsukan }}">
-                            </div>
-                            <div class="form-group my-2">
-                                <label for="">Jumlah Pemasukan</label>
-                                <input type="date" id="tanggal" name="tanggal_pemasukan" class="form-control"
-                                    placeholder="tanggal_pemasukan" value="{{ $pemasukan->tanggal_pemasukan }}">
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="mb-2">Upload</label>
+                                <label for="">Upload</label>
                                 <br>
                                 <input type="file" name="upload" id="upload" class="form-control">
                             </div>
-                            <div class="form-group text-left"><br></br>
-                                <!-- Menggunakan text-center untuk memusatkan tombol -->
-                                <button type="submit" class="btn btn-success">Simpan Data</button>
-                            </div>
-                           
-                    </form>
+                            <div class="form-group text-left">
+                        <a href="{{ route('donatur.index') }}" class="btn btn-secondary">Kembali</a>
+                    </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

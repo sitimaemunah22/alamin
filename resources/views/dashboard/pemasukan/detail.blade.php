@@ -271,9 +271,9 @@ aside {
                             <div class="form-group">
                                 <input type="date" id="tanggal" name="tanggal_pemasukan" class="form-control" placeholder="tanggal_pemasukan"  value="{{ $pemasukan->tanggal_pemasukan }}">
                             </div>
-                            <div class="form-group text-left"><br></br> <!-- Menggunakan text-center untuk memusatkan tombol -->
-                            <button type="submit" class="btn btn-success">Simpan Data</button>
-                            </div>
+                            <div class="form-group text-left">
+                        <a href="{{ route('jenispemasukan.index') }}" class="btn btn-secondary">Kembali</a>
+                    </div>
                             </from>
                 </div>
             </div>

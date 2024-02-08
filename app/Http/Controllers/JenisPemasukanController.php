@@ -41,6 +41,29 @@ public function edit(Request $request)
     }
     
 
+    public function detail(Request $request)
+    {
+        $id = $request->id;
+
+        $data = [
+            'jenis_pemasukan' => jenis_pemasukan::find($id)
+        ];
+
+        return view('dashboard.JenisPemasukan.detail', $data);
+    }
+
+    // public function kembali(Request $request)
+    // {
+    //     $id = $request->id;
+
+    //     $data = [
+    //         'jenis_pemasukan' => jenis_pemasukan::find($id)
+    //     ];
+
+    //     return view('dashboard.JenisPemasukan.jenispemasukan', $data);
+    // }
+    
+
     public function simpan(Request $request)
     {
         $data = $request->validate([

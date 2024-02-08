@@ -287,9 +287,6 @@
                             <div class="form-group my-2">
                                 <!-- {{ csrf_field() }} -->
                                 @csrf
-                                <label for="">Kode Pemasukan</label>
-                                <input type="number" id="kode" name="kode_pemasukan" class="form-control"
-                                    placeholder="kode_pemasukan">
 
                                     @error('kode_pemasukan')
                                         <span class="text-danger">{{ $message }}</span>
@@ -352,6 +349,8 @@
                                 <!-- Menggunakan text-center untuk memusatkan tombol -->
                                 <button type="submit" class="btn btn-success">Simpan Data</button>
                             </div>
+
+                         
                         </form>
                     </div>
                 </div>

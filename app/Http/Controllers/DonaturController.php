@@ -95,6 +95,17 @@ class DonaturController extends Controller
         return view('dashboard.donatur.edit', $data);
     }
 
+    public function detail(Request $request)
+    {
+        $id = $request->id;
+
+        $data = [
+            'donatur' => donatur::find($id),
+        ];
+
+        return view('dashboard.donatur.detail', $data);
+    }
+
 
     public function tambah()
     {

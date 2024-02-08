@@ -278,9 +278,10 @@ aside {
                             <td>{{$item->id_donatur}}</td>
                             <td>{{$item->jumlah_pemsukan}}</td>
                             <td>{{$item->tanggal_pemasukan}}</td>
-                            <td>{{$item->upload}}</td>
+                            <td> <img src="{{ url('pemasukan') . '/' . $item->upload }} "
+                                            style="max-width: 100px; height: auto;" alt="Donatur" /></td>
                             <td>{{$item->aksi}}
-                              <a href="/dashboard/pemasukan/edit/{{ $item->id }}" class="btn btn-success">Edit</a>
+                              <a href="/dashboard/pemasukan/edit/{{ $item->kode_pemasukan }}" class="btn btn-success">Edit</a>
                               <a href="/dashboard/pemasukan/hapus" class="btn btn-success ">Hapus</a>
                             <a href="/dashboard/pemasukan/detail/{{ $item->kode_pemasukan }}" class="btn btn-success ">Detail</a>
                         </td>
